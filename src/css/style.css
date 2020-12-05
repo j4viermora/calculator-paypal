@@ -4,3 +4,7 @@ body {
     align-content: center;
     padding: 10%;
 }
+
+input {
+  color: black;
+}
