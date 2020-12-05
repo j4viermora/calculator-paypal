@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="calculadora paypal" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/css/normalize.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="stylesheet" href="./src/css/skeleton.css" />
+
+    <title>Calculadora Paypal</title>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <div class="six columns">
+          <h2>Calculator to send</h2>
+          <div class="form">
+            <input type="number" name="inputNumber" id="toCalc1" placeholder="Si envio"/>
+            <button class="button button-primary" type="submit" id="send1">Calculate</button>
+          </div>
+          <h3>Commission</h3>
+          <div id="result1"><p>0</p></div>
+          <h3>Will receive</h3>
+          <div class="defaultField" id="resultReceive1"><p>0</p></div>
+
+        </div>
+
+
+        <div class="six columns">
+          <div class="form">
+            <h2>Calculator to Receive</h2>
+            <input type="number" name="inputNumber" id="toCalc2"  placeholder="Quiero recibir" />
+            <button class="button button-primary" type="submit" id="send2">Calculate</button>
+          </div>
+          <h3>Commission</h3>
+          <div id="result2"><p>0</p></div>
+          <h3>I have to send</h3>
+          <div class="defaultField" id="resultReceive2"><p>0</p></div>
+        </div>   
+      </div>
+    </div>
+
+    <script src="./src/js/index.js"></script>
+    <!-- <script src="./src/js/calc.js"></script>
+    <script src="./src/js/print.js"></script> -->
+  </body>
+</html>
