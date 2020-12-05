@@ -8,3 +8,12 @@ body {
 input {
   color: black;
 }
+
+.logo {
+  width: 30%;
+  height: 30%;
+}
+
+hr {
+  color: black;
+}

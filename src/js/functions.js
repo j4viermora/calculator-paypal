@@ -10,4 +10,3 @@ function average(numeroAlCualSeLeSacaraElPorcentaje){
     return a + b 
   }
   
-  
