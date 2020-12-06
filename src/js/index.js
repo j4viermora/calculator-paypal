@@ -16,7 +16,7 @@ function printToSend() {
 
   let receive = subtract(valueToCalc , porcentajeTotal)
   
-  let resultToCalcAverage = document.querySelector('#result1');
+  let resultToCalcAverage = document.querySelector('#average1');
   resultToCalcAverage.innerHTML = `<p>${porcentajeTotal}
   </p>`
 
@@ -27,22 +27,24 @@ function printToSend() {
 
 function printToReceive() {
   let valueToCalc = document.querySelector("#toCalc2").value;
-  valueToCalc = parseFloat( valueToCalc )
+  valueToCalc = parseFloat( (valueToCalc ) )
 
-  let porcentajeTotal = average(valueToCalc)
-  porcentajeTotal = parseFloat( porcentajeTotal.toFixed(2) ) 
+  let subTotalAverage = average( valueToCalc )
+  let subTotalToSend = add(valueToCalc, subTotalAverage)
 
 
-  let receive = add(valueToCalc , porcentajeTotal)
-  receive = parseFloat(  receive.toFixed( 2 )
-  )
+  let totalAverage = average( subTotalToSend )
+  totalAverage = parseFloat( totalAverage.toFixed(2) )
 
-  let resultToCalcAverage = document.querySelector('#result2');
-  resultToCalcAverage.innerHTML = `<p>${porcentajeTotal}
-  </p>`
+  let totalToSend = add (totalAverage,valueToCalc )
+  totalToSend = totalToSend.toFixed(2)
+
+
+  let resultAverage = document.querySelector('#average2')
+  resultAverage.innerHTML =`<p> ${ totalAverage }</p>`
+
 
   let resultToCalcReceive = document.querySelector('#resultReceive2')
-  resultToCalcReceive.innerHTML = `<p>${receive}</p>`
+  resultToCalcReceive.innerHTML = `<p>${ totalToSend }</p>`
+
 }
-
-
