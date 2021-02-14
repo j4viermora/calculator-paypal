@@ -8,11 +8,12 @@ btn2.addEventListener("click", printToReceive);
 function printToSend() {
   let valueToCalc = document.querySelector("#toCalc1").value;
  
-  valueToCalc =  parseFloat(valueToCalc)
+  //valueToCalc =  parseFloat(valueToCalc);
 
 
   let porcentajeTotal = average(valueToCalc)
-  porcentajeTotal = parseFloat( porcentajeTotal.toFixed(2) ) 
+  //porcentajeTotal = parseFloat( porcentajeTotal.toFixed(2) ) 
+  porcentajeTotal = porcentajeTotal.toFixed( 2 )
 
   let receive = subtract(valueToCalc , porcentajeTotal)
   
@@ -27,14 +28,15 @@ function printToSend() {
 
 function printToReceive() {
   let valueToCalc = document.querySelector("#toCalc2").value;
-  valueToCalc = parseFloat( (valueToCalc ) )
+ // valueToCalc = parseFloat( (valueToCalc ) )
 
   let subTotalAverage = average( valueToCalc )
   let subTotalToSend = add(valueToCalc, subTotalAverage)
 
 
   let totalAverage = average( subTotalToSend )
-  totalAverage = parseFloat( totalAverage.toFixed(2) )
+  // totalAverage = parseFloat( totalAverage.toFixed(2) )
+  totalAverage =  totalAverage.toFixed( 2 )
 
   let totalToSend = add (totalAverage,valueToCalc )
   totalToSend = totalToSend.toFixed(2)
