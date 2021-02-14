@@ -1,5 +1,5 @@
 function average(numeroAlCualSeLeSacaraElPorcentaje){
-    return  ([5.4 * numeroAlCualSeLeSacaraElPorcentaje] / 100) + 0.30;
+    return  5.4 * numeroAlCualSeLeSacaraElPorcentaje / 100 + 0.30;
   };
   
   function subtract(a,b) {
