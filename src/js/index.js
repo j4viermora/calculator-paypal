@@ -15,7 +15,9 @@ function printToSend() {
   //porcentajeTotal = parseFloat( porcentajeTotal.toFixed(2) ) 
   porcentajeTotal = porcentajeTotal.toFixed( 2 )
 
-  let receive = subtract(valueToCalc , porcentajeTotal)
+  let receive.fixed( 2 ) = subtract(valueToCalc , porcentajeTotal)
+  
+  
   
   let resultToCalcAverage = document.querySelector('#average1');
   resultToCalcAverage.innerHTML = `<p>${porcentajeTotal}
