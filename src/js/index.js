@@ -1,54 +1,42 @@
 let btn1 = document.querySelector("#send1");
 btn1.addEventListener("click", printToSend);
-
 let btn2 = document.querySelector("#send2");
 btn2.addEventListener("click", printToReceive);
 
 
+
+
 function printToSend() {
   let valueToCalc = document.querySelector("#toCalc1").value;
- 
-  //valueToCalc =  parseFloat(valueToCalc);
 
+  let porcentajeTotal = average(valueToCalc);
+  porcentajeTotal = porcentajeTotal.toFixed(2);
 
-  let porcentajeTotal = average(valueToCalc)
-  //porcentajeTotal = parseFloat( porcentajeTotal.toFixed(2) ) 
-  porcentajeTotal = porcentajeTotal.toFixed( 2 )
+  let receive = subtract(valueToCalc, porcentajeTotal);
+  receive = receive.toFixed(2);
 
-  let receive.fixed( 2 ) = subtract(valueToCalc , porcentajeTotal)
-  
-  
-  
-  let resultToCalcAverage = document.querySelector('#average1');
-  resultToCalcAverage.innerHTML = `<p>${porcentajeTotal}
-  </p>`
+  document.querySelector("#average1").innerHTML = `<p>${porcentajeTotal}
+  </p>`;
 
-  let resultToCalcReceive = document.querySelector('#resultReceive1')
-  resultToCalcReceive.innerHTML = `<p>${receive}</p>`
+  document.querySelector("#resultReceive1").innerHTML = `<p>${receive}</p>`;
 }
 
+function printToReceive( ) {
+ 
 
-function printToReceive() {
-  let valueToCalc = document.querySelector("#toCalc2").value;
- // valueToCalc = parseFloat( (valueToCalc ) )
+  let valueToCalc = document.querySelector(".number2").value;
+  valueToCalc = parseFloat( valueToCalc )
 
-  let subTotalAverage = average( valueToCalc )
-  let subTotalToSend = add(valueToCalc, subTotalAverage)
+  let SubAverage = average( valueToCalc )
+  
+  let subTotalToSend =  add( SubAverage , valueToCalc )
+  
+  // console.log(subTotalToSend)
 
+  let totalAverage = average( subTotalToSend, SubAverage )
 
-  let totalAverage = average( subTotalToSend )
-  // totalAverage = parseFloat( totalAverage.toFixed(2) )
-  totalAverage =  totalAverage.toFixed( 2 )
+  let totalToSend = add( valueToCalc, totalAverage )
 
-  let totalToSend = add (totalAverage,valueToCalc )
-  totalToSend = totalToSend.toFixed(2)
-
-
-  let resultAverage = document.querySelector('#average2')
-  resultAverage.innerHTML =`<p> ${ totalAverage }</p>`
-
-
-  let resultToCalcReceive = document.querySelector('#resultReceive2')
-  resultToCalcReceive.innerHTML = `<p>${ totalToSend }</p>`
-
+  document.querySelector("#average2").innerHTML = `<p> ${ totalAverage.toFixed( 2 ) }</p>`;
+  document.querySelector("#resultReceive2").innerHTML = `<p>${ totalToSend.toFixed( 2 ) }</p>`;
 }
