@@ -1,13 +1,17 @@
 function average(numeroAlCualSeLeSacaraElPorcentaje){
-    return  ( 5.4 * numeroAlCualSeLeSacaraElPorcentaje / 100 ) + 0.3;
+  let result = ( 5.4 * numeroAlCualSeLeSacaraElPorcentaje / 100 ) + 0.3; 
+  return  result
   };
   
 function subtract(a,b) {
-  return a - b
+  let result = a - b
+
+  return result
 }
 
 function add(a , b) {
-  return a + b 
+  let result = a + b
+  return result
 }
 
 

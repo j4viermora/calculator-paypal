@@ -1,19 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { printToSend } from "../helpers/ResultToSendToReceive";
 import { Button } from "./Button";
 
 export const ToSend = () => {
-  const [valueToCalc, setState] = React.useState("");
-  const [totalAverage, setAverage] = React.useState("");
-  const [receive, setReceive] = React.useState("");
+  const [valueToCalc, setState] = useState("");
+  const [result, setResult] = useState({});
+  const { receive, porcentajeTotal } = result;
+
   const handleChange = ({ target }) => {
     setState(target.value);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     const { receive, porcentajeTotal } = printToSend(valueToCalc);
-    setAverage(porcentajeTotal);
-    setReceive(receive);
+    setResult( {
+      ...result,
+      receive,
+      porcentajeTotal 
+    } )
   }, [valueToCalc]);
 
   const handleSubmit = (e) => {
@@ -38,9 +42,9 @@ export const ToSend = () => {
         <Button disabled={!valueToCalc && true}>Guardar</Button>
       </form>
       <h3>Comisión</h3>
-      <p>{valueToCalc === "" ? 0 : totalAverage.toFixed(2)}</p>
+      <p>{valueToCalc === "" ? 0 : porcentajeTotal.toFixed(2)}</p>
       <h3>Recibes</h3>
-      <p>{valueToCalc === "" ? 0 : receive}</p>
+      <p>{valueToCalc === "" ? 0 : receive.toFixed(2)}</p>
     </>
   );
 };

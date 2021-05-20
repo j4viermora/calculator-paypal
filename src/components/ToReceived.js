@@ -1,7 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { printToReceive } from '../helpers/ResultToSendToReceive';
 import { Button } from './Button'
 
 export const ToReceived = () => {
+    
+    const [ value, setValue ] = useState("");
+    const [ result, setResult ] = useState({});
+    const { totalAverage, totalToSend } = result;
+
+    useEffect(()=>{
+
+        const { totalToSend, totalAverage } = printToReceive( value )
+
+        setResult({
+            ...result,
+            totalAverage,
+            totalToSend,
+        })
+
+    }, [ value ])
+
+    const handleChange = ( {target} ) => {
+        setValue(target.value)
+    };
+
     return (
         <>
               <form 
@@ -9,16 +31,20 @@ export const ToReceived = () => {
                 >
                 <h2>Calculator to Receive</h2>
                     <input 
-                    className="number2"
-                    type="number"/>
+                    name='toReceive'
+                    onChange={ handleChange }
+                    placeholder='Para recibir'
+                    type="number"
+                    value={ value }
+                    />
                 <Button>
                     Calcular
                 </Button>
                 </form>
                 <h3>Commission</h3>
-                <div id="average2"><p>0</p></div>
+                <p>{ value === '' ? 0 : totalAverage.toFixed(2) }</p>
                 <h3>I have to send</h3>
-                <div  id="resultReceive2"><p>0</p></div>
+                <p>{ value === '' ? 0 : totalToSend.toFixed(2) }</p>
         </>
     )
 }

@@ -5,6 +5,7 @@ import { ToSend } from "../components/ToSend";
 
 
 export const CalculatorScreen =( props ) => {
+   
     return(
         <Layout>
             <div className="row">
