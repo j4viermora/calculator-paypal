@@ -7,6 +7,8 @@ export const ToSend = () => {
   const [result, setResult] = useState({});
   const { receive, porcentajeTotal } = result;
 
+  const ifInitial = valueToCalc === "";
+
   const handleChange = ({ target }) => {
     setState(target.value);
   };
@@ -38,13 +40,22 @@ export const ToSend = () => {
           placeholder="Enviar"
           value={valueToCalc}
           onChange={handleChange}
+          style={{
+            marginRight: '10px'
+          }}
         />
-        <Button disabled={!valueToCalc && true}>Guardar</Button>
+        {/* <Button disabled={!valueToCalc && true}>Guardar</Button> */}
       </form>
-      <h3>Comisión</h3>
-      <p>{valueToCalc === "" ? 0 : porcentajeTotal.toFixed(2)}</p>
-      <h3>Recibes</h3>
-      <p>{valueToCalc === "" ? 0 : receive.toFixed(2)}</p>
+        <h3>Comisión</h3>
+          <input
+          type='number'
+          value={ ifInitial ? 0 : porcentajeTotal.toFixed(2)}
+          />
+        <h3>Recibes</h3>
+          <input
+          type='number'
+          value={ ifInitial ? 0 : receive.toFixed(2) }
+          />
     </>
   );
 };

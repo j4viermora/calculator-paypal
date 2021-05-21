@@ -8,6 +8,8 @@ export const ToReceived = () => {
     const [ result, setResult ] = useState({});
     const { totalAverage, totalToSend } = result;
 
+    const ifInitial = value === '';
+
     useEffect(()=>{
 
         const { totalToSend, totalAverage } = printToReceive( value )
@@ -29,22 +31,31 @@ export const ToReceived = () => {
               <form 
                 className="form"
                 >
-                <h2>Calculator to Receive</h2>
+                <h2>Calculadora para recibir</h2>
                     <input 
                     name='toReceive'
                     onChange={ handleChange }
                     placeholder='Para recibir'
                     type="number"
                     value={ value }
+                    style={{
+                        marginRight: '10px'
+                    }}
                     />
-                <Button>
+                {/* <Button>
                     Calcular
-                </Button>
+                </Button> */}
                 </form>
-                <h3>Commission</h3>
-                <p>{ value === '' ? 0 : totalAverage.toFixed(2) }</p>
-                <h3>I have to send</h3>
-                <p>{ value === '' ? 0 : totalToSend.toFixed(2) }</p>
+                <h3>Comisión</h3>
+                    <input
+                        type='number'
+                        value={  ifInitial ? 0 : totalAverage.toFixed(2)  }
+                    />
+                <h3>Debo enviar</h3>
+                    <input 
+                        type='number'
+                        value={ ifInitial ? 0 : totalToSend.toFixed(2) }
+                    />
         </>
     )
 }
