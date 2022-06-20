@@ -1,7 +1,6 @@
-# Calcutator-paypal
-This app, calculates the comissions for sending money by paypal
-Make the ReactJs and Bulma css library.
+# Calculadora
 
-This web application run in github page
+Una simple app web creada con next js y bulma css y jotai como manejador  de estado global 
+si quires verla en accion solo debes ir al siguiente link 
 
-https://j4viermora.github.io/calculator-paypal
+https://calculadora-paypal.vercel.app
