@@ -1,4 +1,4 @@
-# calcutator-paypal
+# Calcutator-paypal
 This app, calculates the comissions for sending money by paypal
 Make the ReactJs and Bulma css library.
 
