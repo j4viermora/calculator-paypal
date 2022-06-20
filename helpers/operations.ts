@@ -1,17 +1,16 @@
-function average(numeroAlCualSeLeSacaraElPorcentaje: number): number {
-  let result = (5.4 * numeroAlCualSeLeSacaraElPorcentaje) / 100 + 0.3;
-  return result;
+function average(numberToCalcAverage: number, average = 5.4): number {
+  let result = (average * numberToCalcAverage) / 100;
+  return Number(result.toFixed(6));
 }
 
 function subtract(a: number, b: number): number {
   let result = a - b;
-
-  return result;
+  return Number(result.toFixed(6));
 }
 
 function add(a: number, b: number): number {
   let result = a + b;
-  return result;
+  return Number(result.toFixed(6));
 }
 
 export { average, subtract, add };

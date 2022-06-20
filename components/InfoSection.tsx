@@ -14,6 +14,20 @@ export const InfoSection = () => {
         tu país tiene una comisión diferente y colócala de forma manual en la
         parte de “Las Comisiones PayPal“.
       </p>
+      <h3>Calculadora paypal para recibir pagos</h3>
+      <p>
+        Si vamos a combrar un servicio con paypal, debemos tener en cuenta que
+        la comisión de envio del dinero lo cubre la persona que esta realizando
+        el pago por lo que debemos recordar la comision que deber ser agregada
+        por ella para que nos llegue a nuestra cuenta paypal el dinero
+        correspondiente al servicio que prestamos y queremos cobrar por paypal.
+      </p>
+      <h3>Calculadora paypal para enviar</h3>
+      <p>
+        Si vamos a enviar dinero a una persona, debemos tener en cuenta que la
+        comision la asumiremos nosotros para esos casos es podemos utilizar la
+        calculadora de envio
+      </p>
     </div>
   );
 };

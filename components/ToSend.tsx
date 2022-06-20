@@ -1,59 +1,102 @@
 import React, { useEffect, useState } from 'react';
-import { printToSend } from '../helpers';
+import { AiFillCopy } from 'react-icons/ai';
+import { useCalComission } from 'hooks';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { toast } from 'react-hot-toast';
 
 export const ToSend = () => {
+  const { calcToSend } = useCalComission();
   const [valueToCalc, setState] = useState('');
   const [result, setResult] = useState({
     receive: 0,
     totalAverage: 0,
   });
   const { receive, totalAverage } = result;
-
   const ifInitial = valueToCalc === '';
 
-  const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = ({
+    target,
+  }: React.ChangeEvent<HTMLInputElement>): void => {
     setState(target.value);
   };
 
+  const resetForm = () => {
+    setState('');
+    setResult({
+      receive: 0,
+      totalAverage: 0,
+    });
+  };
+
   useEffect(() => {
-    const { receive, totalAverage } = printToSend(valueToCalc);
+    const { receive, totalAverage } = calcToSend(
+      Number(valueToCalc.replace(',', '.'))
+    );
     setResult({
       ...result,
       receive,
-      totalAverage,
+      totalAverage: totalAverage,
     });
   }, [valueToCalc]);
 
+  const onCopy = () => {
+    toast.success('Copiado al portapapeles');
+  };
+
   return (
     <>
-      <article className='card'>
-        <div className='card-content'>
-          <h3 className='title'>Calculadora paypal para enviar dinero</h3>
-          <form className='form'>
+      <article className='card pb-5'>
+        <div className='card-content '>
+          <h3 className='title is-size-5-mobile'>
+            Calculadora paypal para enviar dinero
+          </h3>
+          <div className='field'>
             <label htmlFor='send'>Enviar</label>
-            <input
-              className='input'
-              id='send'
-              onChange={(e) => handleChange(e)}
-              placeholder='Enviar'
-              type='number'
-              value={valueToCalc}
-            />
-          </form>
-          <label htmlFor='comision'>Comisión</label>
-          <input
-            className='input'
-            id='comision'
-            type='number'
-            value={ifInitial ? 0 : totalAverage.toFixed(2)}
-          />
-          <label htmlFor='received'>Recibes</label>
-          <input
-            className='input'
-            id='received'
-            type='number'
-            value={ifInitial ? 0 : receive.toFixed(2)}
-          />
+            <div className='control'>
+              <input
+                className='input'
+                id='send'
+                onChange={(e) => handleChange(e)}
+                placeholder='Enviar'
+                type='tel'
+                value={valueToCalc}
+              />
+            </div>
+          </div>
+          <div className='field'>
+            <label htmlFor='comision'>Comisión</label>
+            <div className='control'>
+              <span>{ifInitial ? 0 : totalAverage}</span>
+            </div>
+          </div>
+
+          <div className='field'>
+            <label htmlFor='received'>Recibes</label>
+            <CopyToClipboard text={receive.toString()} onCopy={onCopy}>
+              <div
+                className='control'
+                style={{
+                  cursor: 'pointer',
+                  position: 'relative',
+                }}>
+                <span>{ifInitial ? 0 : receive}</span>
+                <span
+                  className='icon is-small is-left'
+                  style={{
+                    top: '20%',
+                    right: '10%',
+                    position: 'absolute',
+                  }}>
+                  <AiFillCopy />
+                </span>
+              </div>
+            </CopyToClipboard>
+          </div>
+        </div>
+        <div className='is-flex is-justify-content-center'>
+          <button className='button is-link' onClick={resetForm}>
+            Resetear formulario
+          </button>
         </div>
       </article>
     </>

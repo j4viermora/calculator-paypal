@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import { Toaster } from 'react-hot-toast';
 
 import {
   Layout,
@@ -13,6 +14,7 @@ import {
 const Home: NextPage = () => {
   return (
     <>
+      <Toaster />
       <Head>
         <title>Calculadora paypal</title>
         <meta
