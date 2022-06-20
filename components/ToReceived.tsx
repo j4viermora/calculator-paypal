@@ -18,12 +18,12 @@ export const ToReceived = () => {
       Number(value.replace(',', '.'))
     );
 
-    setResult({
-      ...result,
+    setResult((prev) => ({
+      ...prev,
       totalAverage,
       totalToSend,
-    });
-  }, [value]);
+    }));
+  }, [value, calcToReceive]);
 
   const handleChange = ({
     target,

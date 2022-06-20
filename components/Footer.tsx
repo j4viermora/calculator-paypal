@@ -7,7 +7,10 @@ export const Footer = () => {
         <div className='content has-text-centered'>
           <p>
             <strong>Calculadora paypal</strong> por{' '}
-            <a href='https://j4viermora.hobbylayer.com' target='_blank'>
+            <a
+              href='https://j4viermora.hobbylayer.com'
+              target='_blank'
+              rel='noreferrer'>
               Javier Mora
             </a>
             . Hecho con ❤ y ☕ para la web.

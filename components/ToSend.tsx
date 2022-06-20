@@ -32,12 +32,12 @@ export const ToSend = () => {
     const { receive, totalAverage } = calcToSend(
       Number(valueToCalc.replace(',', '.'))
     );
-    setResult({
-      ...result,
+    setResult((prev) => ({
+      ...prev,
       receive,
       totalAverage: totalAverage,
-    });
-  }, [valueToCalc]);
+    }));
+  }, [valueToCalc, calcToSend]);
 
   const onCopy = () => {
     toast.success('Copiado al portapapeles');

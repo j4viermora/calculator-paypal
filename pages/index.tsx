@@ -46,7 +46,8 @@ const Home: NextPage = () => {
               {' '}
               <a
                 href='https://www.paypal.com/paypalme/j4viermora'
-                target='_blank'>
+                target='_blank'
+                rel='noreferrer'>
                 ¿Quieres hacer un donativo? pincha aquí
               </a>
             </span>
