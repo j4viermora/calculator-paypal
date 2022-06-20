@@ -32,6 +32,25 @@ const Home: NextPage = () => {
           <h2 className='title is-1 has-text-centered is-size-3-mobile has-text-left-mobile'>
             Calculadora de comisiones paypal
           </h2>
+          <div className='is-flex is-align-items-center'>
+            <figure>
+              <img
+                src='./paypal.svg'
+                alt='logo-paypal'
+                style={{
+                  width: '50px',
+                }}
+              />
+            </figure>
+            <span className='ml-2'>
+              {' '}
+              <a
+                href='https://www.paypal.com/paypalme/j4viermora'
+                target='_blank'>
+                ¿Quieres hacer un donativo? pincha aquí
+              </a>
+            </span>
+          </div>
         </section>
 
         <section className='section'>
