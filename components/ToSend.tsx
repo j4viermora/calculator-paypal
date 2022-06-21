@@ -58,7 +58,7 @@ export const ToSend = () => {
                 id='send'
                 onChange={(e) => handleChange(e)}
                 placeholder='Enviar'
-                type='tel'
+                type='number'
                 value={valueToCalc}
               />
             </div>

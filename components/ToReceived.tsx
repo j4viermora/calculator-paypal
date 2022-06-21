@@ -58,7 +58,7 @@ export const ToReceived = () => {
                 name='toReceive'
                 onChange={handleChange}
                 placeholder='Para recibir'
-                type='tel'
+                type='number'
                 value={value}
               />
             </div>
