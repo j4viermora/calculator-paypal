@@ -8,8 +8,8 @@ export const ToSend = () => {
   const { calcToSend } = useCalComission();
   const [valueToCalc, setState] = useState('');
   const [result, setResult] = useState({
-    receive: 0,
-    totalAverage: 0,
+    receive: '',
+    totalAverage: '',
   });
   const { receive, totalAverage } = result;
   const ifInitial = valueToCalc === '';
@@ -23,8 +23,8 @@ export const ToSend = () => {
   const resetForm = () => {
     setState('');
     setResult({
-      receive: 0,
-      totalAverage: 0,
+      receive: '',
+      totalAverage: '',
     });
   };
 
@@ -37,7 +37,7 @@ export const ToSend = () => {
       receive,
       totalAverage: totalAverage,
     }));
-  }, [valueToCalc, calcToSend]);
+  }, [valueToCalc]);
 
   const onCopy = () => {
     toast.success('Copiado al portapapeles');

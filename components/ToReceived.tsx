@@ -6,8 +6,8 @@ import { AiFillCopy } from 'react-icons/ai';
 export const ToReceived = () => {
   const [value, setValue] = useState('');
   const [result, setResult] = useState({
-    totalAverage: 0,
-    totalToSend: 0,
+    totalAverage: '',
+    totalToSend: '',
   });
   const { calcToReceive } = useCalComission();
   const { totalAverage, totalToSend } = result;
@@ -23,7 +23,7 @@ export const ToReceived = () => {
       totalAverage,
       totalToSend,
     }));
-  }, [value, calcToReceive]);
+  }, [value]);
 
   const handleChange = ({
     target,
@@ -34,8 +34,8 @@ export const ToReceived = () => {
   const resetForm = () => {
     setValue('');
     setResult({
-      totalAverage: 0,
-      totalToSend: 0,
+      totalAverage: '',
+      totalToSend: '',
     });
   };
 
