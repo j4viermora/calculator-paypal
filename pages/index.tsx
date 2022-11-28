@@ -45,7 +45,7 @@ const Home: NextPage = () => {
             <span className='ml-2'>
               {' '}
               <a
-                href='https://www.paypal.com/paypalme/j4viermora'
+                href='https://www.paypal.com/paypalme/j4viermora/5'
                 target='_blank'
                 rel='noreferrer'>
                 ¿Quieres hacer un donativo? pincha aquí
